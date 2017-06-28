@@ -19,20 +19,21 @@ Write-Host -ForegroundColor Yellow "********************************************
 ""
 #*******************************************************
 
-$Users = Import-Csv -Delimiter ";" -Path "C:\user.csv"
-$CN = "OU=Users,OU=Departament,DC=Organization,DC=local"
+$Path = "C:\user.csv" #Путь к файлу user.csv
+$Users = Import-Csv -Delimiter ";" -Path $Path #Импорт csv-файла
+$CN = "OU=Users,OU=Departament,DC=Organization,DC=local" #Путь в AD
 Foreach ($User in $Users)
 {	
-    $Password = $User.Password
-    $Detailedname = $User.LastName + " " + $User.FirstName + " " + $User.MiddleName
-    $UserFirstname = $User.FirstName
-    $UserLastName = $User.LastName
-    $Department = $User.Department
-    $Company = "Company"
-    $Title = $User.Title
-    $SAM= $User.Login + "@company.local"
+    $Password = $User.Password #Пароль пользователя
+    $Detailedname = $User.LastName + " " + $User.FirstName + " " + $User.MiddleName #Полное имя
+    $UserFirstName = $User.FirstName #Имя
+    $UserLastName = $User.LastName #Фамилия
+    $Department = $User.Department #Отдел
+    $Company = "Company" #Компания (Организация)
+    $Title = $User.Title #Должность
+    $SAM= $User.Login + "@company.local" #
     Try {
-            New-ADUser -Name $Detailedname -SamAccountName $User.Login -UserPrincipalName $SAM -DisplayName $Detailedname -GivenName $User.FirstName -Surname  $User.LastName -Company $Company -Department $Department -Title $Title  -AccountPassword  (ConvertTo-SecureString -AsPlainText $Password -Force) -PasswordNeverExpires $true -Enabled $true -Path $CN -Verbose
+            New-ADUser -Name $Detailedname -SamAccountName $User.Login -UserPrincipalName $SAM -DisplayName $Detailedname -GivenName $UserFirstName -Surname  $UserLastName -Company $Company -Department $Department -Title $Title  -AccountPassword  (ConvertTo-SecureString -AsPlainText $Password -Force) -PasswordNeverExpires $true -Enabled $true -Path $CN -Verbose
         }
     Catch {
             Set-ADUser -Identity "CN=$Detailedname,OU=Users,OU=Departament,DC=Organization,DC=local" -Company $Company -Department $Department -Title $Title -Verbose
