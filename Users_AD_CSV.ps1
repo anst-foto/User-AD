@@ -6,7 +6,7 @@ Write-Host -ForegroundColor Yellow "********************************************
 ""
 Write-Host -ForegroundColor Yellow "Добавление пользователей в AD (PowerShell)"
 Write-Host -ForegroundColor Yellow "(c) AnSt. Март 2017"
-Write-Host -ForegroundColor Yellow "Версия: 0.4 (Июнь 2017)"
+Write-Host -ForegroundColor Yellow "Версия: 0.4 (Июль 2017)"
 ""
 Write-Host -ForegroundColor Yellow "*******************************************************"
 ""
