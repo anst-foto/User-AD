@@ -1,3 +1,6 @@
+﻿[![license](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/anst-foto/Broom/blob/master/LICENSE)
+![Language: PowerShell](https://img.shields.io/badge/language-PowerShell-blue.svg)
+
 # User-ActivDirectory
 
 PowerShell-скрипт для добавления пользователей в ActivDirectory из csv-файла
@@ -5,8 +8,9 @@ PowerShell-скрипт для добавления пользователей �
 ***
 
 *  **Добавление пользователей в AD (PowerShell)**
-*  **(c) AnSt. Март 2017**
+*  **&copy; Starinin Andrey (AnSt), 2017**
 *  **Версия: 0.5**
+*  **[MIT License](https://github.com/anst-foto/User-ActiveDirectory/blob/master/LICENSE)**
 
 ***
 
