@@ -10,7 +10,7 @@ PowerShell-скрипт для добавления пользователей �
 *  **Добавление пользователей в AD (PowerShell)**
 *  **&copy; Starinin Andrey (AnSt), 2017**
 *  **Версия: 0.5**
-*  **[MIT License](https://github.com/anst-foto/User-ActiveDirectory/blob/master/LICENSE)**
+*  **[MIT License](https://github.com/anst-foto/User-ActiveDirectory/LICENSE)**
 
 ***
 
